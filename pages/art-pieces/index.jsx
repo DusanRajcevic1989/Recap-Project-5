@@ -1,4 +1,4 @@
-import ArtPieces from "./ArtPieces";
+import ArtPieces from "../../Components/ArtPieces/ArtPieces";
 import React from "react";
 
 export default function RenderArtPieces({ data }) {

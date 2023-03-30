@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import React from "react";
 // import ArtPieces from "./Components/ArtPieces/ArtPieces.jsx";
-import Spotlight from "./Components/Spotlight/Spotlight.jsx";
+import Spotlight from "./spotlight/Spotlight.jsx";
 
 export default function SpotlightPage({ data }) {
   function getRandomElement(array) {
