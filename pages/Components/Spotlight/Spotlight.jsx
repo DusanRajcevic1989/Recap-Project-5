@@ -1,4 +1,3 @@
-//import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 
@@ -16,17 +15,12 @@ const StyledImage = styled.img`
   height: 20%;
 `;
 
-export default function ArtPiecesPreview({
-  image,
-  title,
-  artist,
-  width,
-  height,
-}) {
+export default function Spotlight({ image, artist }) {
+  console.log(image);
   return (
     <StyledPieces>
-      <StyledImage src={image} alt={"image"} width={width} height={height} />
-      {artist} {title}
+      <StyledImage src={image} alt={"image"} width={300} height={300} />
+      {artist}
     </StyledPieces>
   );
 }
