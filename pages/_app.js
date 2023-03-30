@@ -18,13 +18,14 @@ export default function App({ Component, pageProps }) {
   if (isLoading) return <div>loading..</div>;
   if (!data) return <div>no data</div>;
 
-  function handleFavorite() {
-    // const arr = data.map((piece) => piece.slug);
-    // artPiecesInfo = { ...arr, isFavorite: false };
-    // setArtPiecesInfo(artPiecesInfo);
-    console.log("data");
-  }
+  const arr = artPiecesInfo.map((piece) => piece.slug);
 
+  function handleFavorite() {
+    // const info = { ...arr, isFavorite: !false };
+    // setArtPiecesInfo();
+    console.log("hallo world");
+  }
+  console.log("data", handleFavorite);
   return (
     <>
       <SWRConfig value={{ fetcher }}>
