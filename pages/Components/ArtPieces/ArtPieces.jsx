@@ -4,12 +4,12 @@ import Spotlight from "../Spotlight/Spotlight";
 
 //Function random
 
-function getRandomElement(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
+// function getRandomElement(array) {
+//   return array[Math.floor(Math.random() * array.length)];
+// }
 
 export default function ArtPieces({ pieces }) {
-  const randomObject = getRandomElement(pieces);
+  // const randomObject = getRandomElement(pieces);
 
   return (
     <div>
@@ -27,10 +27,10 @@ export default function ArtPieces({ pieces }) {
         ))}
       </ul>
 
-      <Spotlight
+      {/* <Spotlight
         image={randomObject.imageSource}
         artist={randomObject.artist}
-      ></Spotlight>
+      ></Spotlight> */}
     </div>
   );
 }
