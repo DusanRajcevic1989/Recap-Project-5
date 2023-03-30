@@ -2,15 +2,7 @@ import React from "react";
 import ArtPiecesPreview from "../ArtPiecesPreview/ArtPiecesPreview";
 import Spotlight from "../Spotlight/Spotlight";
 
-//Function random
-
-// function getRandomElement(array) {
-//   return array[Math.floor(Math.random() * array.length)];
-// }
-
 export default function ArtPieces({ pieces }) {
-  // const randomObject = getRandomElement(pieces);
-
   return (
     <div>
       <ul>

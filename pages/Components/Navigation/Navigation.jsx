@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <div>
       <Link href="../Components/ArtPieces">Pieces</Link>
-      <Link href="../Components/Spotlight">Spotlight</Link>
+      <Link href="../">Spotlight</Link>
     </div>
   );
 }
