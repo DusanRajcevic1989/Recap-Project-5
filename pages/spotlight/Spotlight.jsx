@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
+import FavoriteButton from "../../Components/Favorite Button/Favorite Button";
 
 const StyledPieces = styled.div`
   list-style-type: none;
@@ -20,6 +21,7 @@ export default function Spotlight({ image, artist }) {
   return (
     <StyledPieces>
       <StyledImage src={image} alt={"image"} width={300} height={300} />
+      <FavoriteButton />
       {artist}
     </StyledPieces>
   );
