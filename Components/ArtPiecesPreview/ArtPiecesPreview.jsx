@@ -14,6 +14,7 @@ const StyledPieces = styled.div`
 const StyledImage = styled.img`
   width: 20%;
   height: 20%;
+  list-style-type: none;
 `;
 
 export default function ArtPiecesPreview({
@@ -27,7 +28,10 @@ export default function ArtPiecesPreview({
   return (
     <StyledPieces>
       <StyledImage src={image} alt={"image"} width={width} height={height} />
-      {artist} {title}
+      <ul>
+        <li>{artist} </li>
+        <li>{title}</li>
+      </ul>
     </StyledPieces>
   );
 }

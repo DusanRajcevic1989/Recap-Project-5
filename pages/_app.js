@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }) {
     });
   }
 
-  console.log(artPiecesInfo);
+  //console.log(artPiecesInfo);
   return (
     <>
       <SWRConfig value={{ fetcher }}>

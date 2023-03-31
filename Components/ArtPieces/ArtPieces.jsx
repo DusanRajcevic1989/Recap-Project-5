@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function ArtPieces({ pieces, onToggleFavorite }) {
   return (
     <div>
-      <ul>
+      <ul style={{ listStyle: "none" }}>
         {pieces.map((piece) => (
           <li key={piece.slug}>
             <Link href={`../art-pieces/${piece.slug}`}>

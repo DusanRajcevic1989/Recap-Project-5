@@ -13,10 +13,13 @@ export default function index({ artPiecesInfo, data }) {
         }
     }
   }
-  console.log("filtered", filteredData);
+  //console.log("filtered", filteredData);
   return (
     <div>
-      <li> {<ArtPieces pieces={filteredData} />}</li>
+      <li style={{ listStyle: "none" }}>
+        {" "}
+        {<ArtPieces pieces={filteredData} />}
+      </li>
     </div>
   );
 }
