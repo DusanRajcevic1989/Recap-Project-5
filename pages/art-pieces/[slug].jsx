@@ -1,15 +1,11 @@
 import React from "react";
 import ArtPieceDetails from "../../Components/ArtPieceDetails/ArtPieceDetails";
 import { useRouter } from "next/router";
-import RenderArtPieces from "./";
 
-export default function ArtPieceDetailsSlug({ data }) {
+export default function ArtPieceDetailsSlug({ data, onToggleFavorite }) {
   const router = useRouter();
   const { slug } = router.query;
-  //console.log(pieceIndex);
-  console.log(data);
   const pieceIndex = data.find((piece) => piece.slug === slug);
-  console.log(pieceIndex);
 
   return (
     <div>
@@ -21,6 +17,8 @@ export default function ArtPieceDetailsSlug({ data }) {
         genre={pieceIndex.genre}
         width={pieceIndex.dimensions.width}
         height={pieceIndex.dimensions.height}
+        onToggleFavorite={onToggleFavorite}
+        slug={pieceIndex.slug}
       />
     </div>
   );

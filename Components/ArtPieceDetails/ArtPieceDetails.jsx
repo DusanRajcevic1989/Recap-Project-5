@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import FavoriteButton from "../FavoriteButton/FavoriteButton.jsx";
 
 const StyledPieces = styled.div`
   list-style-type: none;
@@ -24,8 +25,9 @@ export default function ArtPieceDetails({
   genre,
   width,
   height,
+  onToggleFavorite,
+  slug,
 }) {
-  console.log(title);
   return (
     <div>
       <StyledPieces>
@@ -37,6 +39,7 @@ export default function ArtPieceDetails({
       <Link href="./">
         <button>back</button>
       </Link>
+      <FavoriteButton onToggleFavorite={onToggleFavorite} isFavorite={slug} />
     </div>
   );
 }

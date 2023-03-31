@@ -1,10 +1,10 @@
 import ArtPieces from "../../Components/ArtPieces/ArtPieces";
 import React from "react";
 
-export default function RenderArtPieces({ data }) {
+export default function RenderArtPieces({ data, onToggleFavorite }) {
   return (
     <div>
-      <ArtPieces pieces={data} />
+      <ArtPieces pieces={data} onToggleFavorite={onToggleFavorite} />
     </div>
   );
 }

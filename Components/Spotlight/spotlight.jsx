@@ -1,6 +1,7 @@
+import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import FavoriteButton from "../Components/Favorite Button/Favorite Button";
+import FavoriteButton from "../FavoriteButton/FavoriteButton.jsx";
 
 const StyledPieces = styled.div`
   list-style-type: none;
@@ -16,11 +17,11 @@ const StyledImage = styled.img`
   height: 20%;
 `;
 
-export default function Spotlight({ image, artist, onHandleFavorite }) {
+export default function Spotlight({ image, artist, onToggleFavorite, slug }) {
   return (
     <StyledPieces>
       <StyledImage src={image} alt={"image"} width={300} height={300} />
-      <FavoriteButton onHandleFavorite={onHandleFavorite} />
+      <FavoriteButton onToggleFavorite={onToggleFavorite} isFavorite={slug} />
       {artist}
     </StyledPieces>
   );

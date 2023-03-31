@@ -1,10 +1,9 @@
 import React from "react";
 import ArtPiecesPreview from "../ArtPiecesPreview/ArtPiecesPreview";
-import { useRouter } from "next/router";
-//import Spotlight from "../Spotlight/Spotlight";
+import FavoriteButton from "../FavoriteButton/FavoriteButton.jsx";
 import Link from "next/link";
 
-export default function ArtPieces({ pieces }) {
+export default function ArtPieces({ pieces, onToggleFavorite }) {
   return (
     <div>
       <ul>
@@ -17,8 +16,14 @@ export default function ArtPieces({ pieces }) {
                 artist={piece.artist}
                 width={piece.dimensions.width}
                 height={piece.dimensions.height}
+                onToggleFavorite={onToggleFavorite}
+                slug={piece.slug}
               />
             </Link>
+            <FavoriteButton
+              onToggleFavorite={onToggleFavorite}
+              isFavorite={piece.slug}
+            />
           </li>
         ))}
       </ul>

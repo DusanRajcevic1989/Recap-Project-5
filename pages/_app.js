@@ -18,14 +18,25 @@ export default function App({ Component, pageProps }) {
   if (isLoading) return <div>loading..</div>;
   if (!data) return <div>no data</div>;
 
-  const arr = artPiecesInfo.map((piece) => piece.slug);
-
-  function handleFavorite() {
-    // const info = { ...arr, isFavorite: !false };
-    // setArtPiecesInfo();
-    console.log("hallo world");
+  function onToggleFavorite(clickedSlug) {
+    const pieces = data.map((piece) => ({
+      ...piece,
+      isFavorite: piece.slug === clickedSlug,
+    }));
+    setArtPiecesInfo(pieces);
   }
-  console.log("data", handleFavorite);
+
+  // function onToggleFavorite(clickedSlug) {
+  //   setArtPiecesInfo(
+  //     artPiecesInfo.map((entry) =>
+  //       entry.slug === clickedSlug
+  //         ? { ...entry, isFavorite: !entry.isFavorite }
+  //         : entry
+  //     )
+  //   );
+  // }
+
+  console.log(artPiecesInfo);
   return (
     <>
       <SWRConfig value={{ fetcher }}>
@@ -34,7 +45,7 @@ export default function App({ Component, pageProps }) {
         <Component
           {...pageProps}
           data={data}
-          onHandleFavorite={handleFavorite}
+          onToggleFavorite={onToggleFavorite}
         />
       </SWRConfig>
     </>
