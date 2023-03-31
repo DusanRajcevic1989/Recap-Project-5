@@ -7,14 +7,28 @@ const StyledPieces = styled.div`
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 62px;
   padding: 20;
   margin: 20;
-  justify-content: center;
+  justify-content: left;
+`;
+const StyledInfo = styled.div`
+  list-style-type: none;
+  align-contet: center;
 `;
 const StyledImage = styled.img`
   width: 20%;
   height: 20%;
+`;
+
+const Button = styled.button`
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
 `;
 
 export default function ArtPieceDetails({
@@ -32,14 +46,19 @@ export default function ArtPieceDetails({
     <div>
       <StyledPieces>
         <StyledImage src={image} alt={"image"} width={width} height={height} />
-        {artist} {title}
-        {year}
-        {genre}
+        <FavoriteButton onToggleFavorite={onToggleFavorite} isFavorite={slug} />
+        <StyledInfo>
+          <ul>
+            <li>{artist}</li>
+            <li>{title}</li>
+            <li>{year}</li>
+            <li>{genre}</li>
+          </ul>
+        </StyledInfo>
       </StyledPieces>
       <Link href="./">
-        <button>back</button>
+        <Button>Back</Button>
       </Link>
-      <FavoriteButton onToggleFavorite={onToggleFavorite} isFavorite={slug} />
     </div>
   );
 }

@@ -2,23 +2,21 @@ import React from "react";
 import ArtPieces from "../../Components/ArtPieces/ArtPieces";
 
 export default function index({ artPiecesInfo, data }) {
-  console.log("something", data);
-  console.log("pieces: ", artPiecesInfo);
-  //   const something = artPiecesInfo.map((favorites) => favorites.clickedSlug);
-  //   console.log("add: ", something);
-  const filteredArray = data.map((e, i) => {
-    if (arr2.some((e2) => e2.slug === e1.slug)) return "";
-  });
+  const filteredData = [];
 
-  // ? { ...favorite, isFavorite: !isFavorite }
-  // : favorite;
-  console.log("are you there?? ", filteredArray);
+  for (let i = 0; i < data.length; ++i) {
+    for (let j = 0; j < artPiecesInfo.length; ++j) {
+      //console.log(artPiecesInfo[0]);
+      if (artPiecesInfo[j].clickedSlug === data[i].slug)
+        if (artPiecesInfo[j].isFavorite === true) {
+          filteredData.push(data[i]);
+        }
+    }
+  }
+  console.log("filtered", filteredData);
   return (
     <div>
-      <li>
-        {" "}
-        <ArtPieces pieces={filteredArray} />{" "}
-      </li>
+      <li> {<ArtPieces pieces={filteredData} />}</li>
     </div>
   );
 }
