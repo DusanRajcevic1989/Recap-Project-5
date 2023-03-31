@@ -49,6 +49,7 @@ export default function App({ Component, pageProps }) {
           {...pageProps}
           data={data}
           onToggleFavorite={onToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
         />
       </SWRConfig>
     </>
