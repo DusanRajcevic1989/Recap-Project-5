@@ -19,22 +19,25 @@ export default function App({ Component, pageProps }) {
   if (!data) return <div>no data</div>;
 
   function onToggleFavorite(clickedSlug) {
-    const pieces = data.map((piece) => ({
-      ...piece,
-      isFavorite: piece.slug === clickedSlug,
-    }));
-    setArtPiecesInfo(pieces);
+    setArtPiecesInfo((artPiecesInfo) => {
+      // find the piece with the clicked slug
+      const favorite = artPiecesInfo.find(
+        (favorite) => favorite.clickedSlug === clickedSlug
+      );
+      // if artPiecesInfo already contains
+      //console.log("NOT THERE ADDING A NEW ENTRY");
+      if (favorite) {
+        // we need to create a new array with all the content
+        // but with the object that has the clicked slug changed
+        return artPiecesInfo.map((favorite) =>
+          favorite.clickedSlug === clickedSlug
+            ? { ...favorite, isFavorite: !favorite.isFavorite }
+            : favorite
+        );
+      }
+      return [...artPiecesInfo, { clickedSlug, isFavorite: true }];
+    });
   }
-
-  // function onToggleFavorite(clickedSlug) {
-  //   setArtPiecesInfo(
-  //     artPiecesInfo.map((entry) =>
-  //       entry.slug === clickedSlug
-  //         ? { ...entry, isFavorite: !entry.isFavorite }
-  //         : entry
-  //     )
-  //   );
-  // }
 
   console.log(artPiecesInfo);
   return (
